@@ -1,0 +1,6 @@
+sources:
+  - name: public
+    database: mtganalysis
+    schema: public
+    tables:
+      - name: card_ingest
