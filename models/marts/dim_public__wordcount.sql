@@ -1,6 +1,6 @@
 select
 card_name,
-array_size(split(card_text, ' ')),
+{{ word_count("card_text") }} as word_count,
 card_text,
 uri
 from {{ ref('stg_public__cardingest') }}
