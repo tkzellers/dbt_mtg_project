@@ -1,4 +1,23 @@
 models:
   - name: stg_public__cardingest_sfc
-    description: description
+    description: Model to parse json for only those cards that are single-faced (as opposed to double-faced). Will be unioned with the double-faced cards.
+  
   - name: stg_public__cardingest_dfc
+    description: model to parse json for only those cards that are double-faced. Will be unioned with the single-faced cards. 
+  
+  - name: stg_public__cardingest
+    description: One row is one card. union of the single and doulbe-faced card models. 
+    columns:
+      - name: card_name
+        data_tests:
+            - not_null
+      - name: card_text
+        description: Oracle text as provided by scryfall. Not necessarily the text as printed on the card, given errata and edits made by wotc. 
+      - name: price
+        description: by default this is the non-foil price of the card, however if there is only a foil price then that price is returned. some cards will have NULL price. 
+      - name: uri
+        description: url for scryfall card record
+        data_tests:
+            - unique
+            - not_null
+      
