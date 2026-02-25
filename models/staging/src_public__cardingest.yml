@@ -3,4 +3,4 @@ sources:
     database: mtganalysis
     schema: public
     tables:
-      - name: card_ingest
+      - name: card_ingest_lorwyn
