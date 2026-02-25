@@ -1,4 +1,88 @@
 models:
   - name: stg_public__cardingest_sfc
-    description: description
+    description: single-faced cards
+  
   - name: stg_public__cardingest_dfc
+    description: double-faced cards
+  
+  - name: stg_public__cardingest
+    description: union of dfs and sfc models, which should be ephemrate
+    config:
+      group: word_count_team
+      access: private
+      contract:
+        enforced: true
+    columns:
+      - name: load_date
+        data_type: date
+        description: ""
+
+      - name: card_name
+        data_type: varchar
+        description: ""
+
+      - name: card_text
+        data_type: varchar
+        description: ""
+
+      - name: flavor_text
+        data_type: varchar
+        description: ""
+
+      - name: set_name
+        data_type: varchar
+        description: ""
+
+      - name: set_type
+        data_type: varchar
+        description: ""
+
+      - name: rarity
+        data_type: varchar
+        description: ""
+
+      - name: mana_value
+        data_type: varchar
+        description: ""
+
+      - name: color_list
+        data_type: array
+        description: ""
+
+      - name: card_type
+        data_type: varchar
+        description: ""
+
+      - name: price1
+        data_type: variant
+        description: ""
+
+      - name: price2
+        data_type: variant
+        description: ""
+
+      - name: price
+        data_type: float
+        description: ""
+
+      - name: reprint
+        data_type: boolean
+        description: ""
+
+      - name: artist
+        data_type: varchar
+        description: ""
+
+      - name: frame_effects
+        data_type: array
+        description: ""
+
+      - name: date_released
+        data_type: date
+        description: ""
+
+      - name: uri
+        data_type: varchar
+        description: ""
+    
+    

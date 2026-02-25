@@ -1,5 +1,6 @@
 
 select 
+    load_date,
     raw_card_json:name:: string as card_name,
     concat(cast(raw_card_json:card_faces[0]:oracle_text as string), ' // ',
     cast(raw_card_json:card_faces[1]:oracle_text as string)) as card_text,
@@ -20,6 +21,6 @@ select
     raw_card_json:frame_effects:: array as frame_effects,
     raw_card_json:released_at:: date as date_released,
     raw_card_json:scryfall_uri::string as uri
-from {{ source('public', 'card_ingest') }}
+from {{ source('public', 'card_ingest_lorwyn') }}
 where contains(raw_card_json:name, '//')
 
