@@ -1,6 +1,6 @@
 sources:
-  - name: public
-    database: mtganalysis
-    schema: public
+  - name: raw
+    database: scryfall
+    schema: raw
     tables:
       - name: card_ingest_lorwyn

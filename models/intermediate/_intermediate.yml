@@ -1,21 +1,18 @@
 models:
-  - name: stg_public__cardingest_sfc
-    description: single-faced cards
-  
-  - name: stg_public__cardingest_dfc
-    description: double-faced cards
-  
-  - name: stg_public__cardingest
-    description: union of dfs and sfc models, which should be ephemrate
+  - name: int_public__cardingest
+    description: union of dfs and sfc models
     config:
+      materialized: view
       group: word_count_team
-      access: private
+      access: public
       contract:
         enforced: true
     columns:
       - name: load_date
         data_type: date
         description: ""
+        tests:
+          - not_null
 
       - name: card_name
         data_type: varchar
@@ -32,7 +29,10 @@ models:
       - name: set_name
         data_type: varchar
         description: ""
-
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Lorwyn', 'Shadowmoor', 'Morningtide', 'Eventide']
       - name: set_type
         data_type: varchar
         description: ""
@@ -85,4 +85,6 @@ models:
         data_type: varchar
         description: ""
     
-    
+      - name: image_uri
+        data_type: varchar
+        description: ""    

@@ -1,0 +1,11 @@
+models:
+  - name: stg_public__cardingest_sfc
+    description: single-faced cards
+    config:
+      materialized: ephemeral
+  
+  - name: stg_public__cardingest_dfc
+    description: double-faced cards
+    config:
+      materialized: ephemeral
+  

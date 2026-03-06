@@ -1,4 +1,16 @@
 models:
+  - name: fct_public__price_over_time
+    config:
+      group: word_count_team
+      materialized: table
+      
+  - name: dim_public__card_info_image
+    config:
+      materialized: table  
+  
+# deprecated below
+
+
   - name: dim_public__most_expensive_cards
     config:
       group: word_count_team
@@ -10,7 +22,7 @@ models:
   - name: fct_public__yearcompare
     config:
       group: word_count_team
-  
+
   - name: dim_public__wordcount
     description: ""
     config:

@@ -18,6 +18,7 @@ select
     raw_card_json:artist:: string as artist,
     raw_card_json:frame_effects:: array as frame_effects,
     raw_card_json:released_at:: date as date_released,
-    raw_card_json:scryfall_uri::string as uri
-from {{ source('public', 'card_ingest_lorwyn') }}
+    raw_card_json:scryfall_uri::string as uri,
+    raw_card_json:image_uris:normal:: string as image_uri
+from {{ source('raw', 'card_ingest_lorwyn') }}
 where contains(raw_card_json:name, '//') = FALSE
