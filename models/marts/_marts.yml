@@ -11,36 +11,36 @@ models:
 # deprecated below
 
 
-  - name: dim_public__most_expensive_cards
-    config:
-      group: word_count_team
+  # - name: dim_public__most_expensive_cards
+  #   config:
+  #     group: word_count_team
   
-  - name: dim_public__setcardcount
-    config:
-      group: word_count_team
+  # - name: dim_public__setcardcount
+  #   config:
+  #     group: word_count_team
   
-  - name: fct_public__yearcompare
-    config:
-      group: word_count_team
+  # - name: fct_public__yearcompare
+  #   config:
+  #     group: word_count_team
 
-  - name: dim_public__wordcount
-    description: ""
-    config:
-      group: word_count_team
-      access: private
-    columns:
-      - name: card_name
-        data_type: varchar
-        description: ""
+  # - name: dim_public__wordcount
+  #   description: ""
+  #   config:
+  #     group: word_count_team
+  #     access: private
+  #   columns:
+  #     - name: card_name
+  #       data_type: varchar
+  #       description: ""
 
-      - name: word_count
-        data_type: number
-        description: ""
+  #     - name: word_count
+  #       data_type: number
+  #       description: ""
 
-      - name: card_text
-        data_type: varchar
-        description: ""
+  #     - name: card_text
+  #       data_type: varchar
+  #       description: ""
 
-      - name: uri
-        data_type: varchar
-        description: ""
+  #     - name: uri
+  #       data_type: varchar
+  #       description: ""
