@@ -1,6 +1,6 @@
 with prices as (
 
-    select
+    select distinct
         load_date,
         card_name,
         price

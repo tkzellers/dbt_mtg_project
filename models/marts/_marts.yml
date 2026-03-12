@@ -1,5 +1,6 @@
 models:
   - name: fct_public__price_over_time
+    description: "fact table showing price over time by load date. Price is non-foil. Using select distinct to control for instances of duplicated rows because of multiple loads in a day etc."
     config:
       group: word_count_team
       materialized: table
