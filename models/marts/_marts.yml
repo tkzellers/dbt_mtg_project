@@ -4,11 +4,17 @@ models:
     config:
       group: word_count_team
       materialized: table
-      
+
   - name: dim_public__card_info_image
     config:
       materialized: table  
   
+
+
+
+
+
+
 # deprecated below
 
 
