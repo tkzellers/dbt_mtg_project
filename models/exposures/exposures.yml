@@ -1,0 +1,10 @@
+exposures:
+  - name: Lorwyn Price Tracker
+    description: Tableau dashboard, pretty ugly
+    owner: 
+      name: TK Zellers
+      email: tkzellers@gmail.com
+    depends_on:
+      - ref('dim_public__card_info_image')
+      - ref('fct_public__price_over_time')
+    type: dashboard
