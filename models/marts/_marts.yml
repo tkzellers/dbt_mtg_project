@@ -4,6 +4,17 @@ models:
     config:
       group: word_count_team
       materialized: table
+    unit_tests:
+      - name: test_price_basic
+        description: "Basic unit test: single input row is preserved in the fact output"
+        model: fct_public__price_over_time
+        given:
+          - input: ref('int_public__cardingest')
+            rows:
+              - {load_date: '2026-03-01', card_name: 'Black Lotus', price: 10000}
+        expect:
+          rows:
+            - {load_date: '2026-03-01', card_name: 'Black Lotus', price: 10000}
 
   - name: dim_public__card_info_image
     config:

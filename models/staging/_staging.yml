@@ -3,9 +3,129 @@ models:
     description: single-faced cards
     config:
       materialized: ephemeral
+      contract: 
+        enforced: true
+    columns:
+      - name: load_date
+        description: "Ingestion load date"
+        data_type: date
+        tests:
+          - not_null
+      - name: card_name
+        description: "Card name"
+        data_type: varchar
+        tests:
+          - not_null
+      - name: card_text
+        description: "Oracle text for the card"
+        data_type: varchar
+      - name: flavor_text
+        description: "Flavor text (if any)"
+        data_type: varchar
+      - name: set_name
+        description: "Name of the set"
+        data_type: varchar
+      - name: set_type
+        description: "Set type"
+        data_type: varchar
+      - name: rarity
+        description: "Rarity value"
+        data_type: varchar
+      - name: mana_value
+        description: "Converted mana cost / mana value"
+        data_type: varchar
+      - name: color_list
+        description: "Color identity as an array"
+        data_type: array
+      - name: card_type
+        description: "Type line of the card"
+        data_type: varchar
+      - name: price
+        description: "Normalized price (usd or usd_foil)"
+        data_type: number
+        tests:
+          - not_null
+      - name: reprint
+        description: "Whether the card is a reprint"
+        data_type: boolean
+      - name: artist
+        description: "Artist name"
+        data_type: varchar
+      - name: frame_effects
+        description: "Frame effects (array)"
+        data_type: array
+      - name: date_released
+        description: "Release date from scryfall"
+        data_type: date
+      - name: uri
+        description: "Scryfall URI"
+        data_type: varchar
+      - name: image_uri
+        description: "Image URL"
+        data_type: varchar
   
   - name: stg_public__cardingest_dfc
     description: double-faced cards
     config:
       materialized: ephemeral
+      contract:
+        enforced: true
+    columns:
+      - name: load_date
+        description: "Ingestion load date"
+        data_type: date
+        tests:
+          - not_null
+      - name: card_name
+        description: "Card name"
+        data_type: varchar
+        tests:
+          - not_null
+      - name: card_text
+        description: "Oracle text for the double-faced card (concatenated)"
+        data_type: varchar
+      - name: flavor_text
+        description: "Flavor text (concatenated if present)"
+        data_type: varchar
+      - name: set_name
+        description: "Name of the set"
+        data_type: varchar
+      - name: set_type
+        description: "Set type"
+        data_type: varchar
+      - name: rarity
+        description: "Rarity value"
+        data_type: varchar
+      - name: mana_value
+        description: "Converted mana cost / mana value"
+        data_type: varchar
+      - name: color_list
+        description: "Color identity as an array"
+        data_type: array
+      - name: card_type
+        description: "Type line of the card"
+        data_type: varchar
+      - name: price
+        description: "Normalized price (usd or usd_foil)"
+        data_type: number
+        tests:
+          - not_null
+      - name: reprint
+        description: "Whether the card is a reprint"
+        data_type: boolean
+      - name: artist
+        description: "Artist name"
+        data_type: varchar
+      - name: frame_effects
+        description: "Frame effects (array)"
+        data_type: array
+      - name: date_released
+        description: "Release date from scryfall"
+        data_type: date
+      - name: uri
+        description: "Scryfall URI"
+        data_type: varchar
+      - name: image_uri
+        description: "Image URL"
+        data_type: varchar
   

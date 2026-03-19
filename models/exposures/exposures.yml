@@ -1,5 +1,5 @@
 exposures:
-  - name: Lorwyn Price Tracker
+  - name: lorwyn_price_tracker
     description: Tableau dashboard, pretty ugly
     owner: 
       name: TK Zellers
